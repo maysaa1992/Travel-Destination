@@ -1,8 +1,15 @@
+import Tour from './tour/Tour'
 function Tours (props){
   return(
     <>
-    <h2>{props.Tours_Name}</h2>
-    <img src={props.Tours_Image} alt={props.Tours_Name}/>
+    {
+    props.tourdata.data.map(tour=>{
+      return(
+        <Tour tour={tour} key={tour.id} />
+
+      )
+    })
+  }
     </>
   )
 }
