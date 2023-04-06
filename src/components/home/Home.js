@@ -6,11 +6,8 @@
   console.log(props)
 return(
     <>
-    <Header/>
-    
-      
-        <Tours tourdata={props}/>
-    
+    <Header/>  
+        <Tours data={props.data}/>
   
   <Footer/>
     </>
