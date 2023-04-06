@@ -1,8 +1,23 @@
+
+import Tour from './tour/Tour'
+import { Link } from "react-router-dom";
+
+
 function Tours (props){
   return(
     <>
-    <h2>{props.Tours_Name}</h2>
-    <img src={props.Tours_Image} alt={props.Tours_Name}/>
+    {
+    props.data.map(tour=>{
+      return(
+             <div key={tour.id}>
+             <Link  to = {`/city/${tour.id}`}>
+              <Tour name={tour.name} image={tour.image}/>
+
+            </Link>
+                </div>
+      )
+    })
+  }
     </>
   )
 }
